@@ -14,3 +14,4 @@ cd ~/bochs
 ./bin/bochs -f bochsrc.disk
 ```
 
+![result](./img/result.png)
