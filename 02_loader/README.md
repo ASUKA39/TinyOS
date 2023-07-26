@@ -1,5 +1,17 @@
 ```shell
-./build.sh
+~/bochs/bin/bximage
+# hd flat 60 hd60M.img
+
+nasm -o ./mbr ./mbr.S -I ./include/
+dd if=./mbr of=./hd60M.img bs=512 count=1 conv=notrunc
+
+nasm -o ./loader ./loader.S -I ./include/
+dd if=./loader of=./hd60M.img bs=512 count=4 conv=notrunc seek=2
+
+cp ./hd60M.img ~/bochs/
+
+cd ~/bochs
+./bin/bochs -f bochsrc.disk
 ```
-由于现阶段 kernel 仅是个死循环，所以保留了 loader 的回显 'V' 方便识别运行正确性
+
 ![result](./img/result.png)
