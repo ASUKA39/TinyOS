@@ -12,4 +12,5 @@
 - 第二章：done
 - 第三章：done
 - 第四章：done
-- 第五章：doing now
+- 第五章：done
+- 第六章：doing now
