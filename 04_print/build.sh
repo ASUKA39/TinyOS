@@ -16,7 +16,7 @@ dd if=./build/loader of=./build/hd60M.img bs=512 count=4 conv=notrunc seek=2
 
 # gcc -o ./build/main.o -c -m32 -I ./lib/kernel/ ./kernel/main.c
 # nasm -f elf -o ./build/print.o ./lib/kernel/print.S
-# ld -m elf_i386 -Ttext 0x00001500 -e main -o ./build/kernel.bin  ./build/main.o build/print.o
+# ld -m elf_i386 -Ttext 0x00001500 -e main -o ./build/kernel.bin  ./build/main.o ./build/print.o
 dd if=./build/kernel.bin of=./build/hd60M.img bs=512 count=200 conv=notrunc seek=9
 
 cp ./build/hd60M.img ~/bochs/
