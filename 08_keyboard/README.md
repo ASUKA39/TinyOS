@@ -15,10 +15,10 @@ make all
 ![result](./img/result.png)
 上图展示了以下输入反馈：
 - 小写字母
-- shift 转大写字母
-- CapsLock 转大写字母
-- shift + CapsLock 转小写字母
+- shift 小写字母转大写
+- CapsLock 小写字母转大写
+- shift + CapsLock 大写字母转小写
 - 数字
-- shift 转符号
+- shift 数字转符号
 - 空格、换行及回退
 - 未定义字符
