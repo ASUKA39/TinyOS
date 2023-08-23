@@ -80,7 +80,16 @@ static void* vaddr_get(enum pool_flags pf, uint32_t pg_cnt) {
       	vaddr_start = kernel_vaddr.vaddr_start + bit_idx_start * PG_SIZE;
    	}
     else {	
-   		// ...
+   		struct task_struct* cur = running_thread();
+      	bit_idx_start  = bitmap_scan(&cur->userprog_vaddr.vaddr_bitmap, pg_cnt);
+      	if (bit_idx_start == -1) {
+	 		return NULL;
+    	}
+   		while(cnt < pg_cnt) {
+	 		bitmap_set(&cur->userprog_vaddr.vaddr_bitmap, bit_idx_start + cnt++, 1);
+     	}
+      	vaddr_start = cur->userprog_vaddr.vaddr_start + bit_idx_start * PG_SIZE;
+      	ASSERT((uint32_t)vaddr_start < (0xc0000000 - PG_SIZE));
    	}
    	return (void*)vaddr_start;
 }
