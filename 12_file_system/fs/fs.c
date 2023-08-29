@@ -56,6 +56,7 @@ static bool mount_partition(struct list_elem *pelem, int arg)
         list_init(&cur_part->open_inodes);
         printk("mount %s done!\n", part->name);
 
+        sys_free(sb_buf);
         return true;
     }
     return false;
