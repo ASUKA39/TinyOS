@@ -1,25 +1,19 @@
-# 《操作系统真象还原》
+# TinyOS
 
-参考资料：
+TinyOS 是一个从零开始编写的完整的玩具操作系统，设计和代码实现参考《操作系统真象还原》。其包括从 MBR 引导开始到内存管理、输入输出设备驱动、中断系统、进程调度，以及磁盘驱动、简易文件系统、用户进程支持、基于管道的进程通信机制和一个极简的 shell
 
-《操作系统真象还原》
+- 编译环境：gcc 4.4, nasm
 
-《Operating System：Three Easy Pieces》
+- 虚拟机平台：bochs 2.6.2
 
-进度：
+- 参考资料：
 
-- 第一章：done
-- 第二章：done
-- 第三章：done
-- 第四章：done
-- 第五章：done
-- 第六章：done
-- 第七章：done
-- 第八章：done
-- 第九章：done
-- 第十章：done
-- 第十一章：done
-- 第十二章：done
-- 第十三章：done
-- 第十四章：done
-- 第十五章：stuck
+  - 《操作系统真象还原》
+
+  - 《Operating System：Three Easy Pieces》
+
+- 进度：
+
+  - 第一章 ~ 第十四章：done
+
+  - 第十五章：stuck
